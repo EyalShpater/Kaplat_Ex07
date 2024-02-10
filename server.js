@@ -1,16 +1,3 @@
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-// Usage
-async function example() {
-    console.log('Start');
-    await sleep(1000); // Sleep for 2 seconds
-    console.log('End');
-}
-
-example();
-
 const { Console, count } = require("console");
 const express = require("express");
 const app = express();

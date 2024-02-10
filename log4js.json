@@ -1,0 +1,44 @@
+{
+    "appenders": {
+      "console": {
+        "type": "console",
+        "layout": {
+          "type": "pattern",
+          "pattern": "%d{dd-MM-yyyy hh:mm:ss.SSS} %p: %m | request #%X{requestCounter}"
+        } 
+      },
+      "file1": {
+        "type": "file",
+        "filename": "logs/requests.log",
+        "flags": "w",
+        "layout": {
+          "type": "pattern",
+          "pattern": "%d{dd-MM-yyyy hh:mm:ss.SSS} %p: %m | request #%X{requestCounter}"
+      }
+    },
+    "file2":
+    {
+      "type": "file",
+        "filename": "logs/todos.log",
+        "flags": "w",
+        "layout": {
+          "type": "pattern",
+          "pattern": "%d{dd-MM-yyyy hh:mm:ss.SSS} %p: %m | request #%X{requestCounter}"
+      }
+    }
+  },
+    "categories": {
+        "default": {
+          "appenders": ["console"],
+          "level": "debug"
+        },
+        "request-logger": {
+          "appenders": ["file1", "console"],
+          "level": "info"
+        },
+        "todo-logger": {
+          "appenders": ["file2"],
+          "level": "info"  
+        }
+      }
+    }
